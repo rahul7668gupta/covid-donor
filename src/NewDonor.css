@@ -1,0 +1,11 @@
+.input_box{
+	display: flex;
+	justify-content: center;
+}
+.card{
+	width:30%;
+	margin-left: 35%;
+	display: flex;
+	border: 5px solid #00B0FF;
+	box-shadow: 0px 8px 8px +8px #00B0FF;
+}
