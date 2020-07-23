@@ -1,0 +1,44 @@
+.donorparent{
+	display: flex;
+	flex-direction: row;
+}
+
+.cards{
+	display:flex;
+	flex-direction: row;
+}
+.card-box{
+	transition: transform .2s;
+}
+.card-box:hover{
+	transform: scale(1.2);
+}
+
+.rightchild {
+	max-width: 30%;
+}
+
+.midchild{
+	max-width: 60%;
+}
+
+.leftchild{
+	max-width: 10%;
+}
+
+img{
+	transition: transform .2s;
+}
+
+img:hover{
+	transform: scale(1.5);
+}
+
+Button{
+	transition: transform .2s;
+}
+
+Button:hover{
+	transform: scale(1.2);
+}
+

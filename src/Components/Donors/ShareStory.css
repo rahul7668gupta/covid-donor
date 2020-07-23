@@ -1,0 +1,16 @@
+.donorparent{
+	display: flex;
+	flex-direction: row;
+}
+
+.rightchild {
+	max-width: 30%;
+}
+
+.midchild{
+	max-width: 60%;
+}
+
+.leftchild{
+	max-width: 10%;
+}

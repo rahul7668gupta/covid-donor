@@ -1,26 +1,33 @@
 import React, { Component } from "react";
 import Donor from "./contracts/Donor.json";
 import getWeb3 from "./getWeb3";
-import NavComp from './NavComp';
-import Slider from './Slider';
-import Donors from './Donors';
-import NewDonor from './NewDonor';
-import ShareStory from './ShareStory';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import NavComp from './Components/NavComp';
+import Slider from './Components/Slider';
+import Donors from './Components/Donors/Donors';
+import NewDonor from './Components/NewDonor/NewDonor';
+import ShareStory from './Components/ShareStory/ShareStory';
 
 import "./App.css";
 
 class App extends Component {
-  state = {
-    donorData: {},
-    web3: {},
-    contractAddress: "",
-    donorCount: "",
-    name: "rahul",
-    age: "22",
-    bloodGroup: "b+",
-    location: "google.com",
-    phoneNo: "9032700938"
-  };
+  constructor() {
+    super();
+    this.state = {
+      // donorData: {},
+      web3: {},
+      contractAddress: "",
+      donorCount: "",
+      donorData: {
+        name: "rahul",
+        age: 22,
+        bloodGroup: "b+",
+        location: "google.com",
+        phoneNo: 9032700938
+      }
+    };
+  }
+  
 
   componentDidMount = async () => {
     try {
@@ -40,15 +47,16 @@ class App extends Component {
       );
       console.log("Contract Instance : " + this.donorInstance);
       
-      this.handleDonorCount();
-      // this.handleNewDonorData();
+      await this.handleDonorCount();
+      await this.retrieveDonorData();
+      // await this.handleNewDonorData1();
       // alert("Your data has been added!")
       // Set web3, accounts, and contract to the state, and then proceed with an
       // example of interacting with the contract's methods.
 
-      this.setState({ 
+      this.setState({
         web3: this.web3,
-        contractAddress : Donor.networks[this.networkId].address
+        contractAddress: Donor.networks[this.networkId].address
       });
       console.log("Web3 Obj : " + this.state.web3);
 
@@ -65,7 +73,7 @@ class App extends Component {
   handleInputChange = (event) => {
     const target = event.target;
     const value = target.type === "checkbox" ? target.checked : target.value;
-    const name = target.name;
+    const name = target.donorData.name;
     this.setState({
       [name]: value,
     })
@@ -79,27 +87,41 @@ class App extends Component {
     })
   }
 
-  handleNewDonorData = async () => {
+  handleNewDonorData = async (revState) => {
     const newDonor = await this.donorInstance.methods.addDonorData(
-      this.state.name,
-      this.state.bloodGroup,
-      this.state.age,
-      this.state.phoneNo,
-      this.state.location
+      revState.name,
+      revState.bloodGroup,
+      revState.age,
+      revState.phoneNo,
+      revState.location
     )
       .send({ from: this.accounts[0] })
 
     console.log(newDonor);
-    this.setState({ name: null, age: null, phoneNo: null, location: null, bloodGroup: null });
+    this.setState({ donorData: { name: null, age: null, phoneNo: null, location: null, bloodGroup: null }});
   }
 
-  // retrieveDonorData = async () => {
-  //   const donorData = async () => {
-  //     for (i = 0; i<this.state.donorCount; i++)
-  //     return await this.donorInstance.methods.donorMapping[i]().call();
-  //   }
-  //   //use for each on donorCount and add the returned data to an array, then map that array and render data in the frontend
-  // }
+  handleNewDonorData1 = async () => {
+    const newDonor = await this.donorInstance.methods.addDonorData(
+      this.state.donorData.name,
+      this.state.donorData.bloodGroup,
+      this.state.donorData.age,
+      this.state.donorData.phoneNo,
+      this.state.donorData.location
+    )
+      .send({ from: this.accounts[0] })
+
+    console.log(newDonor);
+    this.setState({ donorData: { name: null, age: null, phoneNo: null, location: null, bloodGroup: null }});
+  }
+
+  retrieveDonorData = async () => {
+    const donorData = await this.donorInstance.methods.donorMapping(1).call();
+    console.log(donorData);
+  }
+  
+  //use for each on donorCount and add the returned data to an array, then map that array and render data in the frontend
+
 
   render() {
     if (!this.state.web3) {
@@ -109,10 +131,21 @@ class App extends Component {
       <div className="App">
         <NavComp />
         <p>Contract Address : "{this.state.contractAddress}"</p>
-        <Slider />
-        <Donors />
-        <NewDonor />
-        <ShareStory />
+        <Router>
+          <Switch>
+            <Route exact path="/covid-donor" component={() => <Slider /> } />
+            <Route path="/donors" component={Donors} />
+            <Route
+              path="/newdonor"
+              component={
+                () => <NewDonor
+                  donorInstance ={this.donorInstance} accounts = {this.accounts}
+                />
+              }
+            />
+            <Route path="/sharestory" component={ShareStory} />
+          </Switch>
+        </Router>
       </div>
     );
   }
