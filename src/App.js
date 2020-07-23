@@ -13,7 +13,13 @@ class App extends Component {
   state = {
     donorData: {},
     web3: {},
-    contractAddress: ""
+    contractAddress: "",
+    donorCount: "",
+    name: "rahul",
+    age: "22",
+    bloodGroup: "b+",
+    location: "google.com",
+    phoneNo: "9032700938"
   };
 
   componentDidMount = async () => {
@@ -23,17 +29,20 @@ class App extends Component {
 
       // Use web3 to get the user's accounts.
       this.accounts = await this.web3.eth.getAccounts();
-      console.log(this.accounts);
+      console.log("Accounts from metamask: " + this.accounts);
       // Get the contract instance.
       this.networkId = await this.web3.eth.net.getId();
-      console.log(this.networkId);
+      console.log("Matic network ID: " + this.networkId);
 
       this.donorInstance = new this.web3.eth.Contract(
         Donor.abi,
         Donor.networks[this.networkId] && Donor.networks[this.networkId].address,
       );
-      console.log(this.donorInstance);
-
+      console.log("Contract Instance : " + this.donorInstance);
+      
+      this.handleDonorCount();
+      // this.handleNewDonorData();
+      // alert("Your data has been added!")
       // Set web3, accounts, and contract to the state, and then proceed with an
       // example of interacting with the contract's methods.
 
@@ -41,11 +50,8 @@ class App extends Component {
         web3: this.web3,
         contractAddress : Donor.networks[this.networkId].address
       });
-      console.log(this.state.web3);
+      console.log("Web3 Obj : " + this.state.web3);
 
-      // this.setState({
-      //   donorData: await this.donorInstance.methods.getDonorData(0).call()
-      // })
       // alert("Donor data retrieved from contract");
     } catch (error) {
       // Catch any errors for any of the above operations.
@@ -64,6 +70,36 @@ class App extends Component {
       [name]: value,
     })
   }
+
+  handleDonorCount = async () => {
+    const donorCount = await this.donorInstance.methods.getDonorCount().call();
+    console.log("Donor Count : " + donorCount);
+    this.setState({
+      donorCount: donorCount
+    })
+  }
+
+  handleNewDonorData = async () => {
+    const newDonor = await this.donorInstance.methods.addDonorData(
+      this.state.name,
+      this.state.bloodGroup,
+      this.state.age,
+      this.state.phoneNo,
+      this.state.location
+    )
+      .send({ from: this.accounts[0] })
+
+    console.log(newDonor);
+    this.setState({ name: null, age: null, phoneNo: null, location: null, bloodGroup: null });
+  }
+
+  // retrieveDonorData = async () => {
+  //   const donorData = async () => {
+  //     for (i = 0; i<this.state.donorCount; i++)
+  //     return await this.donorInstance.methods.donorMapping[i]().call();
+  //   }
+  //   //use for each on donorCount and add the returned data to an array, then map that array and render data in the frontend
+  // }
 
   render() {
     if (!this.state.web3) {
