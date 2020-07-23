@@ -37,7 +37,7 @@ class NavComp extends React.Component {
 						      width='25px' height='25px'
 						       />
 							<label>
-						    	<Nav.Link href="/donors">
+						    	<Nav.Link href="/covid-donor/donors">
 									Find Donors
 								</Nav.Link>
 						    </label>						 
@@ -48,7 +48,7 @@ class NavComp extends React.Component {
 					    		width='25px' height='25px'
 					    	/>
 							<label>
-						    	<Nav.Link href="/newdonor">
+						    	<Nav.Link href="/covid-donor/newdonor">
 									Donate plasma
 								</Nav.Link>
 						    </label>					 
@@ -60,7 +60,7 @@ class NavComp extends React.Component {
 					    		width='25px' height='25px'
 					    	/>
 							<label>
-						    	<Nav.Link href="/sharestory">
+						    	<Nav.Link href="/covid-donor/sharestory">
 									Share your story
 								</Nav.Link>
 						    </label>					 

@@ -133,17 +133,17 @@ class App extends Component {
         <p>Contract Address : "{this.state.contractAddress}"</p>
         <Router>
           <Switch>
-            <Route exact path="/covid-donor" component={() => <Slider /> } />
-            <Route path="/donors" component={Donors} />
+            <Route exact path="/covid-donor" component={Slider} />
+            <Route path="/covid-donor/donors" component={Donors} />
             <Route
-              path="/newdonor"
+              path="/covid-donor/newdonor"
               component={
                 () => <NewDonor
                   donorInstance ={this.donorInstance} accounts = {this.accounts}
                 />
               }
             />
-            <Route path="/sharestory" component={ShareStory} />
+            <Route path="/covid-donor/sharestory" component={ShareStory} />
           </Switch>
         </Router>
       </div>
