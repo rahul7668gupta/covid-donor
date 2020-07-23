@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6b36f9ab45076433b51ba385d684818e",
+    "revision": "697fd1536e8965b120b50d3cb948411f",
     "url": "/covid-donor/index.html"
   },
   {
-    "revision": "d94745263607ef468902",
+    "revision": "7851620ab3e5a91a9b14",
     "url": "/covid-donor/static/css/2.9bc0b5ab.chunk.css"
   },
   {
-    "revision": "b5a7847945e49bb8050a",
-    "url": "/covid-donor/static/css/main.adbacf0a.chunk.css"
+    "revision": "892dedc7ed26316f8934",
+    "url": "/covid-donor/static/css/main.89559574.chunk.css"
   },
   {
-    "revision": "d94745263607ef468902",
-    "url": "/covid-donor/static/js/2.a103660d.chunk.js"
+    "revision": "7851620ab3e5a91a9b14",
+    "url": "/covid-donor/static/js/2.0df3d660.chunk.js"
   },
   {
     "revision": "f5d0708f5c3cbfcd037bcf3275b8dc8e",
-    "url": "/covid-donor/static/js/2.a103660d.chunk.js.LICENSE.txt"
+    "url": "/covid-donor/static/js/2.0df3d660.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b5a7847945e49bb8050a",
-    "url": "/covid-donor/static/js/main.e8165e8e.chunk.js"
+    "revision": "892dedc7ed26316f8934",
+    "url": "/covid-donor/static/js/main.c8477fdd.chunk.js"
   },
   {
     "revision": "dee09f1f47f6d75b0f1f",
@@ -46,6 +46,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "e8c322de9658cbeb8a774b6624167c2c",
     "url": "/covid-donor/static/media/brand-icons.e8c322de.woff2"
+  },
+  {
+    "revision": "ae2ae124a655a88538f8f8c27ad27a89",
+    "url": "/covid-donor/static/media/calling.ae2ae124.svg"
+  },
+  {
+    "revision": "83aaa4791eb38867c26f47ff72c71635",
+    "url": "/covid-donor/static/media/connect.83aaa479.svg"
   },
   {
     "revision": "615096e941b86108fea29ac789fd9950",
@@ -76,6 +84,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/covid-donor/static/media/icons.faff9214.woff"
   },
   {
+    "revision": "f5cb692505ce852ac9437c1b5f9319e5",
+    "url": "/covid-donor/static/media/medicalcare.f5cb6925.png"
+  },
+  {
     "revision": "701ae6abd4719e9c2ada3535a497b341",
     "url": "/covid-donor/static/media/outline-icons.701ae6ab.eot"
   },
@@ -94,6 +106,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "ef60a4f6c25ef7f39f2d25a748dbecfe",
     "url": "/covid-donor/static/media/outline-icons.ef60a4f6.woff"
+  },
+  {
+    "revision": "3f3644b9c6999ca9a32210c51a93a87d",
+    "url": "/covid-donor/static/media/sharedgoals.3f3644b9.png"
   },
   {
     "revision": "f5399086a7424e701c9f0e6cb573a3b7",

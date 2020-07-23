@@ -1,28 +1,32 @@
 {
   "files": {
-    "main.css": "/covid-donor/static/css/main.adbacf0a.chunk.css",
-    "main.js": "/covid-donor/static/js/main.e8165e8e.chunk.js",
-    "main.js.map": "/covid-donor/static/js/main.e8165e8e.chunk.js.map",
+    "main.css": "/covid-donor/static/css/main.89559574.chunk.css",
+    "main.js": "/covid-donor/static/js/main.c8477fdd.chunk.js",
+    "main.js.map": "/covid-donor/static/js/main.c8477fdd.chunk.js.map",
     "runtime-main.js": "/covid-donor/static/js/runtime-main.8b5e08c5.js",
     "runtime-main.js.map": "/covid-donor/static/js/runtime-main.8b5e08c5.js.map",
     "static/css/2.9bc0b5ab.chunk.css": "/covid-donor/static/css/2.9bc0b5ab.chunk.css",
-    "static/js/2.a103660d.chunk.js": "/covid-donor/static/js/2.a103660d.chunk.js",
-    "static/js/2.a103660d.chunk.js.map": "/covid-donor/static/js/2.a103660d.chunk.js.map",
+    "static/js/2.0df3d660.chunk.js": "/covid-donor/static/js/2.0df3d660.chunk.js",
+    "static/js/2.0df3d660.chunk.js.map": "/covid-donor/static/js/2.0df3d660.chunk.js.map",
     "index.html": "/covid-donor/index.html",
-    "precache-manifest.31b497d3f0f872028204d1809c0aa785.js": "/covid-donor/precache-manifest.31b497d3f0f872028204d1809c0aa785.js",
+    "precache-manifest.ef63f3f47e767ff9cf96279720917bbc.js": "/covid-donor/precache-manifest.ef63f3f47e767ff9cf96279720917bbc.js",
     "service-worker.js": "/covid-donor/service-worker.js",
     "static/css/2.9bc0b5ab.chunk.css.map": "/covid-donor/static/css/2.9bc0b5ab.chunk.css.map",
-    "static/css/main.adbacf0a.chunk.css.map": "/covid-donor/static/css/main.adbacf0a.chunk.css.map",
-    "static/js/2.a103660d.chunk.js.LICENSE.txt": "/covid-donor/static/js/2.a103660d.chunk.js.LICENSE.txt",
+    "static/css/main.89559574.chunk.css.map": "/covid-donor/static/css/main.89559574.chunk.css.map",
+    "static/js/2.0df3d660.chunk.js.LICENSE.txt": "/covid-donor/static/js/2.0df3d660.chunk.js.LICENSE.txt",
     "static/media/semantic.min.css": "/covid-donor/static/media/outline-icons.ef60a4f6.woff",
+    "static/media/calling.svg": "/covid-donor/static/media/calling.ae2ae124.svg",
+    "static/media/connect.svg": "/covid-donor/static/media/connect.83aaa479.svg",
     "static/media/donate.png": "/covid-donor/static/media/donate.615096e9.png",
+    "static/media/medicalcare.png": "/covid-donor/static/media/medicalcare.f5cb6925.png",
+    "static/media/sharedgoals.png": "/covid-donor/static/media/sharedgoals.3f3644b9.png",
     "static/media/undraw.png": "/covid-donor/static/media/undraw.f5399086.png"
   },
   "entrypoints": [
     "static/js/runtime-main.8b5e08c5.js",
     "static/css/2.9bc0b5ab.chunk.css",
-    "static/js/2.a103660d.chunk.js",
-    "static/css/main.adbacf0a.chunk.css",
-    "static/js/main.e8165e8e.chunk.js"
+    "static/js/2.0df3d660.chunk.js",
+    "static/css/main.89559574.chunk.css",
+    "static/js/main.c8477fdd.chunk.js"
   ]
 }
