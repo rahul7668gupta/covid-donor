@@ -16,6 +16,11 @@ class NewDonor extends React.Component {
 			donorCount: ""
 		}
 		this.accounts = props.accounts;
+		this.biconomy = props.biconomy;
+	}
+
+	componentDidMount() {
+		
 	}
 
 	handleNewDonorData = async () => {
