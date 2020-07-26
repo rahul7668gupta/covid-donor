@@ -34,11 +34,4 @@ img:hover{
 	transform: scale(1.5);
 }
 
-Button{
-	transition: transform .2s;
-}
-
-Button:hover{
-	transform: scale(1.2);
-}
 

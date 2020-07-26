@@ -34,7 +34,6 @@ class App extends Component {
       }
     };
   }
-  
 
   componentDidMount = async () => {
     try {
@@ -64,9 +63,7 @@ class App extends Component {
         console.log("Contract Instance : " + this.donorInstance);
          
         await this.handleDonorCount();
-        await this.retrieveDonorData();
-        // await this.handleNewDonorData1();
-        // alert("Your data has been added!")
+
         // Set web3, accounts, and contract to the state, and then proceed with an
         // example of interacting with the contract's methods.
 
@@ -82,11 +79,11 @@ class App extends Component {
       // alert("Donor data retrieved from contract");
     } catch (error) {
       // Catch any errors for any of the above operations.
-      var e = JSON.stringify(error);
-      alert(
-        "Failed to load web3, accounts, or contract. Check console for details. " + { e }
-      );
       console.error(error);
+      alert(
+        `Failed to load web3, accounts, or contract. Check console for details.  ${ JSON.stringify(error)}`
+      );
+      
     }
   };
 
@@ -105,13 +102,16 @@ class App extends Component {
     this.setState({
       donorCount: donorCount
     })
+    return donorCount;
   }
 
-  retrieveDonorData = async () => {
-    const donorData = await this.donorInstance.methods.donorMapping(1).call();
-    console.log(donorData);
-  }
-  
+  // logout = async() => {
+  //   await portis.logout();
+  // }
+
+  // login = async () => {
+  //   await portis.showPortis();
+  // }
   //use for each on donorCount and add the returned data to an array, then map that array and render data in the frontend
 
 
@@ -125,7 +125,7 @@ class App extends Component {
         <p>Contract Address : "{this.state.contractAddress}"</p>
         <Router>
           <Switch>
-            <Route exact path="/covid-donor" component={Slider} />
+            <Route exact path="/covid-donor/" component={Slider} />
             <Route
               path="/covid-donor/donors"
               component={
@@ -143,7 +143,11 @@ class App extends Component {
                 />
               }
             />
-            <Route path="/covid-donor/sharestory" component={ShareStory} />
+            <Route path="/covid-donor/sharestory" component={
+                () => <ShareStory
+                  donorInstance ={this.donorInstance} accounts = {this.accounts}
+                />
+              } />
           </Switch>
         </Router>
       </div>

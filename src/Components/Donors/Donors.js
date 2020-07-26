@@ -27,6 +27,37 @@ class Donors extends React.Component {
 		console.log("All donors: " + JSON.stringify(this.state.donors));
 	  }
 	render() {
+		const realData = this.state.donors.map(
+			(i, index) =>
+			<Card className="card-box" key={index}>
+			<Card.Content>
+			  <Image
+				floated='right'
+				size='mini'
+				src='https://react.semantic-ui.com/images/avatar/large/molly.png'
+			  />
+			<Card.Header>{i.name}</Card.Header>
+			<Card.Meta>{i.location}</Card.Meta>
+			  <Card.Description>
+				Blood Group: <strong>{i.bloodGroup}</strong> plasma.
+			  </Card.Description>
+			</Card.Content>
+			<Card.Content extra className="card-box">
+				<div className='ui two buttons'>
+					<a href={`tel:${i.phoneNo}`}>
+						<Button basic color='green'>
+							Call {i.phoneNo}
+						</Button>
+					</a>
+					<a href={`mailto:${i.email}`}>
+						<Button basic color='red'>
+							Email
+						</Button>
+					</a>
+			  	</div>
+			</Card.Content>
+		  </Card>
+		)
 		return (
 			<div>
 				<br/>
@@ -42,8 +73,8 @@ class Donors extends React.Component {
 						<br />
 						<div className="cards">
 							<Card.Group>
-								<Card className="card-box">
-								  <Card.Content >
+								{/* <Card className="card-box"> */}
+								  {/* <Card.Content >
 									<Image
 									  floated='right'
 									  size='mini'
@@ -89,103 +120,10 @@ class Donors extends React.Component {
 									  </Button>
 									</div>
 								  </Card.Content>
-								</Card>
-								<Card  className="card-box">
-								  <Card.Content>
-									<Image
-									  floated='right'
-									  size='mini'
-									  src='https://react.semantic-ui.com/images/avatar/large/jenny.jpg'
-									/>
-									<Card.Header>Jenny Lawrence</Card.Header>
-									<Card.Meta>New User</Card.Meta>
-									<Card.Description>
-									  Jenny requested permission to view your contact details
-									</Card.Description>
-								  </Card.Content>
-								  <Card.Content extra className="card-box">
-									<div className='ui two buttons'>
-									  <Button basic color='green'>
-										Call
-									  </Button>
-									  <Button basic color='red'>
-										Email
-									  </Button>
-									</div>
-								  </Card.Content>
-								</Card>
-								<Card  className="card-box">
-								  <Card.Content>
-									<Image
-									  floated='right'
-									  size='mini'
-									  src='https://react.semantic-ui.com/images/avatar/large/jenny.jpg'
-									/>
-									<Card.Header>Jenny Lawrence</Card.Header>
-									<Card.Meta>New User</Card.Meta>
-									<Card.Description>
-									  Jenny requested permission to view your contact details
-									</Card.Description>
-								  </Card.Content>
-								  <Card.Content extra>
-									<div className='ui two buttons'>
-									  <Button basic color='green'>
-										Call
-									  </Button>
-									  <Button basic color='red'>
-										Email
-									  </Button>
-									</div>
-								  </Card.Content>
-								</Card>
-								<Card className="card-box">
-								  <Card.Content>
-									<Image
-									  floated='right'
-									  size='mini'
-									  src='https://react.semantic-ui.com/images/avatar/large/jenny.jpg'
-									/>
-									<Card.Header>Jenny Lawrence</Card.Header>
-									<Card.Meta>New User</Card.Meta>
-									<Card.Description>
-									  Jenny requested permission to view your contact details
-									</Card.Description>
-								  </Card.Content>
-								  <Card.Content extra className="card-box">
-									<div className='ui two buttons'>
-									  <Button basic color='green'>
-										Call
-									  </Button>
-									  <Button basic color='red'>
-										Email
-									  </Button>
-									</div>
-								  </Card.Content>
-								</Card>
-								<Card className="card-box">
-								  <Card.Content>
-									<Image
-									  floated='right'
-									  size='mini'
-									  src='https://react.semantic-ui.com/images/avatar/large/molly.png'
-									/>
-									<Card.Header>Molly Thomas</Card.Header>
-									<Card.Meta>New User</Card.Meta>
-									<Card.Description>
-									  Molly wants to add you to the group <strong>musicians</strong>
-									</Card.Description>
-								  </Card.Content>
-								  <Card.Content extra className="card-box">
-									<div className='ui two buttons'>
-									  <Button basic color='green'>
-										Call
-									  </Button>
-									  <Button basic color='red'>
-										Email
-									  </Button>
-									</div>
-								  </Card.Content>
-								</Card>
+								
+								 */}
+									{/* </Card> */}
+								{realData}
 							  </Card.Group>
 						</div>
 					</main>

@@ -12,6 +12,7 @@ class NewDonor extends React.Component {
 			bloodGroup: "",
 			location: "",
 			phoneNo: "",
+			email: "",
 			isChecked: false,
 			donorCount: ""
 		}
@@ -20,7 +21,7 @@ class NewDonor extends React.Component {
 	}
 
 	componentDidMount() {
-		
+		this.handleDonorCount();
 	}
 
 	handleNewDonorData = async () => {
@@ -28,15 +29,16 @@ class NewDonor extends React.Component {
 		const donorData = await this.props.donorInstance.methods.addDonorData(
 			this.state.name,
 			this.state.bloodGroup,
-			this.state.age,
 			this.state.phoneNo,
-			this.state.location
+			this.state.age,
+			this.state.location,
+			this.state.email
 		)
 			.send({ from: this.accounts[0] })
 		
 		console.log(donorData);
 		console.log(donorData.transactionHash);
-		this.setState({ name: "", age: "", phoneNo: "", location: "", bloodGroup: "" } );
+		this.setState({ name: "", age: "", phoneNo: "", location: "", bloodGroup: "", email : "" } );
 		alert("Thank you for registering to donate blood plasma!");
 		window.location.reload();
 	}
@@ -50,7 +52,8 @@ class NewDonor extends React.Component {
 		this.setState({
 		  [name]: value,
 		})
-	  }
+	}
+	
 	
 	handleSubmit = async () => {
 		alert('Please confirm the metamask transaction!');
@@ -78,7 +81,7 @@ class NewDonor extends React.Component {
 				<br />
 				<br />
 					<button type="button" onClick={this.handleDonorCount}>
-					Totoal Donor Count: {this.state.donorCount}
+					Total Donor Count: {this.state.donorCount}
 			</button>
 			<div className="input_box card">
 				<center>
@@ -95,6 +98,10 @@ class NewDonor extends React.Component {
 					  <div className="field">
 					    <label>Age</label>
 					    <input type="number" name="age" placeholder="Age" value={this.state.age} onChange={this.handleInputChange}/>
+						</div>
+					<div className="field">
+					    <label>Email</label>
+					    <input type="email" name="email" placeholder="Email" value={this.state.email} onChange={this.handleInputChange}/>
 					  </div>
 					  <div className="field">
 					    <label>Phone Number</label>
@@ -112,7 +119,7 @@ class NewDonor extends React.Component {
 											tabIndex="0"
 											className="hidden"
 											checked={this.state.isChecked}
-											onChange={this.handleInputChange}
+											onChange={this.handleChange}
 							/>
 					      <label>I agree to the Terms and Conditions</label>
 					    </div>
