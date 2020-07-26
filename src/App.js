@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Donor from "./contracts/Donor.json";
-import getWeb3 from "./getWeb3";
+// import getWeb3 from "./getWeb3";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NavComp from './Components/NavComp';
 import Slider from './Components/Slider';
@@ -10,6 +10,10 @@ import ShareStory from './Components/ShareStory/ShareStory';
 
 //using meta txns with biconomy
 // import Biconomy from "@biconomy/mexa";
+
+//uisng portis wallet
+import Portis from '@portis/web3';
+import Web3 from 'web3';
 
 import "./App.css";
 
@@ -38,7 +42,14 @@ class App extends Component {
 
       // this.biconomy = new Biconomy(Web3, {apiKey: "LbOkM_BNx.b0a7a913-3db2-420e-a1d6-9ba4c8485367"});
       // const Web3 = new Web3(this.biconomy);
-      this.web3 = await getWeb3();
+      const customNode = {
+        nodeUrl: 'https://rpc-mumbai.matic.today/',
+        chainId: 80001,
+      };
+      
+      const portis = new Portis('863afd6a-a7e6-4da7-8e62-0c091da895ec', customNode);
+      this.web3 = new Web3(portis.provider);
+      // this.web3 = await getWeb3();
         // Use web3 to get the user's accounts.
         this.accounts = await this.web3.eth.getAccounts();
         console.log("Accounts from metamask: " + this.accounts);
@@ -64,12 +75,16 @@ class App extends Component {
         contractAddress: Donor.networks[this.networkId].address
       });
       console.log("Web3 Obj : " + this.state.web3);
-
+      portis.isLoggedIn().then(({ error, result }) => {
+        console.log(error, result);
+      });
+      
       // alert("Donor data retrieved from contract");
     } catch (error) {
       // Catch any errors for any of the above operations.
+      var e = JSON.stringify(error);
       alert(
-        `Failed to load web3, accounts, or contract. Check console for details.`,
+        "Failed to load web3, accounts, or contract. Check console for details. " + { e }
       );
       console.error(error);
     }
