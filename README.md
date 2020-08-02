@@ -17,7 +17,7 @@ We propose a blockchain-based platform for people to volunteer to donate blood p
 
 1) Easy to register yourself as the blood plasma donor(if you are a recovered patient).
 2) Contact the donor with email/phone based on your location(if you are a victim's family member).
-3) A more trustable data source through a trustless system
+3) A more trustable data source through a trustless system.
   Yes, we are talking about integrating the **Ethereum blockchain network**. Ethereum is popular for its immutable, decentralized yet transparent environment. Along with the power of **Matic** system, we can build a more effective and affordable database system.
 The need arose from the rising number of accusations on governments all around the world and in India, mainly due to the lack of transparency and immutability, where you can tamper with the data without anyone noticing. Since all the transactions get noted down on the Ethereum network forever, it will build a system that people can trust.
 4) Tamper Proof Data
