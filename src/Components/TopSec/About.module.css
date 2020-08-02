@@ -1,0 +1,43 @@
+
+.about2{
+    
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: initial;
+    border-radius: 10%;
+    text-align: center;
+}
+.main{
+    display: flex;
+    flex-flow: row wrap;
+}
+.leftChild{
+    display: flex;
+    flex-flow: column wrap;
+    width: 70%;
+    text-align: center;
+    
+}
+.rightChild{
+    width: 30%;
+}
+.image{
+    width: 90%;
+    height: 90%;
+    margin-left: 10%;
+    border-radius: 30%;
+    background-attachment: fixed;
+}
+.main2{
+    display: flex;
+    flex-flow: row wrap;
+}
+.rightChild2{
+    display: flex;
+    flex-flow: column wrap;
+    width: 70%;
+    text-align: center;
+}
+.leftChild2{
+    width: 30%;
+}

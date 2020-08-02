@@ -1,6 +1,7 @@
 import React from 'react';
 import undraw from "../assets/undraw.png";
 import './NewDonor.css';
+import styles from './NewDonor.module.css';
 
 class NewDonor extends React.Component {
 
@@ -18,15 +19,17 @@ class NewDonor extends React.Component {
 		}
 		this.accounts = props.accounts;
 		this.biconomy = props.biconomy;
+		this.donorInstance = props.donorInstance;
 	}
 
 	componentDidMount() {
-		this.handleDonorCount();
+		// this.handleDonorCount();
+		console.log(this.props);
 	}
 
 	handleNewDonorData = async () => {
 		
-		const donorData = await this.props.donorInstance.methods.addDonorData(
+		const donorData = await this.donorInstance.methods.addDonorData(
 			this.state.name,
 			this.state.bloodGroup,
 			this.state.phoneNo,
@@ -56,14 +59,16 @@ class NewDonor extends React.Component {
 	
 	
 	handleSubmit = async () => {
-		alert('Please confirm the metamask transaction!');
+		alert('Please confirm the your transaction!');
 		console.log(this.props);
 		console.log(this.state);
 		await this.handleNewDonorData()
 	}
 
 	handleDonorCount = async () => {
-		const donorCount = await this.props.donorInstance.methods.getDonorCount().call();
+		alert("calling handledonorcount");
+		const donorCount = await this.donorInstance.methods.getDonorCount().call();
+		alert("handledonorcount called succefully");
 		console.log("Donor Count : " + donorCount);
 		this.setState({
 		  donorCount: donorCount
@@ -73,68 +78,50 @@ class NewDonor extends React.Component {
 
 	render() {
 		return (
-		<div>
+			<div className={styles.parent}>
 			<center>
 				<h2>Be a donor </h2>
 				<br />
 				<img src={undraw} alt="heart" width="100px" height="100px"/>
-				<br />
-				<br />
-					<button type="button" onClick={this.handleDonorCount}>
-					Total Donor Count: {this.state.donorCount}
-			</button>
-			<div className="input_box card">
-				<center>
-					<br />
-					<form className="ui form">
-					  <div className="field">
-					    <label>Name</label>
-									<input type="text" name="name" placeholder="Full Name" value={this.state.name} onChange={this.handleInputChange}/>
-					  </div>
-					  <div className="field">
-					    <label>Blood group</label>
-					    <input type="text" name="bloodGroup" placeholder="Blood group" value={this.state.bloodGroup} onChange={this.handleInputChange}/>
-					  </div>
-					  <div className="field">
-					    <label>Age</label>
-					    <input type="number" name="age" placeholder="Age" value={this.state.age} onChange={this.handleInputChange}/>
-						</div>
-					<div className="field">
-					    <label>Email</label>
-					    <input type="email" name="email" placeholder="Email" value={this.state.email} onChange={this.handleInputChange}/>
-					  </div>
-					  <div className="field">
-					    <label>Phone Number</label>
-					    <input type="number" name="phoneNo" placeholder="Phone Number" value={this.state.phoneNo} onChange={this.handleInputChange}/>
-					  </div>
-					  <div className="field">
-					    <label>Location</label>
-					    <input type="text" name="location" placeholder="Location" value={this.state.location} onChange={this.handleInputChange}/>
-					  </div>
-					  <div className="field">
-					    <div className="ui checkbox">
-							<input
-											name="isChecked"
-											type="checkbox"
-											tabIndex="0"
-											className="hidden"
-											checked={this.state.isChecked}
-											onChange={this.handleChange}
-							/>
-					      <label>I agree to the Terms and Conditions</label>
-					    </div>
-					  </div>
-								<button className="ui button" onClick={(event) => {
-									event.preventDefault();
-									this.handleSubmit();
-								}
-							}>Submit</button>
-					</form>
-					<br />
-				</center>						
-			</div></center>
-			<br />
-			<br />
+				
+			</center>			
+			<div className={styles.container}>  
+				<form className={styles.contact}>
+					<fieldset>
+						<input name="name" placeholder="Your name" type="text" value={this.state.name} onChange={this.handleInputChange} required autofocus/>
+					</fieldset>
+					<fieldset>
+						<input name="email" placeholder="Your Email Address" type="email" value={this.state.email} onChange={this.handleInputChange} required/>
+					</fieldset>
+					<fieldset>
+						<input name="age" placeholder="Your current age" type="text" value={this.state.age} onChange={this.handleInputChange} required/>
+					</fieldset>
+					<fieldset>
+						<input name="bloodGroup" placeholder="Your blood group" type="text" value={this.state.bloodGroup} onChange={this.handleInputChange} required/>
+					</fieldset>
+					<fieldset>
+						<input name="phoneNo" placeholder="Your Phone Number" type="tel" value={this.state.phoneNo} onChange={this.handleInputChange} required/>
+					</fieldset>
+					<fieldset>
+						<input name="location" placeholder="Your location" type="text" value={this.state.location} onChange={this.handleInputChange} required/>
+					</fieldset>
+					<input 
+					    type="checkbox"   	 
+					    name="isChecked" 
+					  	onChange = {this.handleChange} 
+				      	checked={this.state.isChecked} 
+				      />
+				    <label>I agree to the Terms and Conditions</label>
+					<fieldset>
+							<button name="submit" type="submit" id="contact-submit" onClick={(event) => {
+								event.preventDefault();
+								this.handleSubmit();
+							}}>
+								Submit
+						</button>
+					</fieldset>
+				</form>
+			</div>	
 		</div>	
 	)}
 }

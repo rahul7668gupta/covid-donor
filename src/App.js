@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import Donor from "./contracts/Donor.json";
 // import getWeb3 from "./getWeb3";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import NavComp from './Components/NavComp';
-import Slider from './Components/Slider';
 import Donors from './Components/Donors/Donors';
 import NewDonor from './Components/NewDonor/NewDonor';
 import ShareStory from './Components/ShareStory/ShareStory';
+import NavComp from './Components/NavComp/NavComp';
+import Home from './Home/Home';
+import styles from './App.module.css';
 
 //using meta txns with biconomy
 // import Biconomy from "@biconomy/mexa";
@@ -14,8 +15,6 @@ import ShareStory from './Components/ShareStory/ShareStory';
 //uisng portis wallet
 import Portis from '@portis/web3';
 import Web3 from 'web3';
-
-import "./App.css";
 
 class App extends Component {
   constructor() {
@@ -33,6 +32,7 @@ class App extends Component {
         phoneNo: 9032700938
       }
     };
+    
   }
 
   componentDidMount = async () => {
@@ -122,10 +122,10 @@ class App extends Component {
     return (
       <div className="App">
         <NavComp />
-        <p>Contract Address : "{this.state.contractAddress}"</p>
+        <p align="center">Contract Address : "{this.state.contractAddress}"</p>
         <Router>
           <Switch>
-            <Route exact path="/covid-donor/" component={Slider} />
+            <Route exact path="/covid-donor/" component={Home} />
             <Route
               path="/covid-donor/donors"
               component={

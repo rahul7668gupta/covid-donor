@@ -1,6 +1,8 @@
 .donorparent{
 	display: flex;
-	flex-direction: row;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;
 }
 
 .cards{
@@ -14,24 +16,6 @@
 	transform: scale(1.2);
 }
 
-.rightchild {
-	max-width: 30%;
-}
 
-.midchild{
-	max-width: 60%;
-}
-
-.leftchild{
-	max-width: 10%;
-}
-
-img{
-	transition: transform .2s;
-}
-
-img:hover{
-	transform: scale(1.5);
-}
 
 

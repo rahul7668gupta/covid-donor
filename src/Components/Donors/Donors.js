@@ -39,14 +39,14 @@ class Donors extends React.Component {
 			<Card.Header>{i.name}</Card.Header>
 			<Card.Meta>{i.location}</Card.Meta>
 			  <Card.Description>
-				Blood Group: <strong>{i.bloodGroup}</strong> plasma.
+				Blood Group: <strong>{i.bloodGroup}</strong>.
 			  </Card.Description>
 			</Card.Content>
 			<Card.Content extra className="card-box">
 				<div className='ui two buttons'>
-					<a href={`tel:${i.phoneNo}`}>
+					<a href={`tel:${i.mobNumber}`}>
 						<Button basic color='green'>
-							Call {i.phoneNo}
+							Call
 						</Button>
 					</a>
 					<a href={`mailto:${i.email}`}>
@@ -64,8 +64,7 @@ class Donors extends React.Component {
 				<br/>
 				<center><h2>Find Donors</h2></center>
 				<section  className="donorparent">
-					<div className="rightchild">
-						
+					<div className="rightchild">						
 						<img alt="call" src={calling} width="300px" height="300px"/>
 					</div>
 					<main className="midchild">

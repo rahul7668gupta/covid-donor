@@ -1,6 +1,6 @@
 import React from 'react';
 import donate from "../assets/donate.png";
-import './ShareStory.css';
+import styles from './ShareStory.module.css';
 import medicalcare from '../assets/medicalcare.png';
 import sharedgoals from '../assets/sharedgoals.png';
 
@@ -31,59 +31,58 @@ class ShareStory extends React.Component{
 	}
 
 	render(){
+		{/* this is a comment */}
 		return (
+		
 		<div>
+			<center><h2>Share your story </h2></center>
+			`{/* This is a comment */}`
 			<center>
-				<h2>Share your story </h2>
-				<br />
-				<img src={donate} alt="heart" width="200px" height="200px"/>
-				<br />
-				<br />
-			</center>
-			<center>
-			<section className="donorparent">
-				<img className="image"
-					alt="" 
-					src={medicalcare} 
-					width="300px" height="300px" 
-					
-				/>
-				<div className="card ">
-					<center>
-						<br />
-						<form className="ui form">
-						  <div className="field">
-						    <label>Name</label>
-						    <input type="text" name="fullName" placeholder="Full Name" onChange={this.handleChange}/>
-						  </div>
-						  <div className="field">
-						    <label>Location</label>
-						    <input type="text" name="location" placeholder="Location" onChange={this.handleChange}/>
-						  </div>
-						  <div className="field">
-						    <label>Story</label>
-						    <textarea name="story" placeholder="Write your story here" onChange={this.handleChange}/>
-						  </div>
-						  
-						  <div className="field">
-						    <div className="ui checkbox">
-						      <input type="checkbox" checked={this.state.isChecked} onChange={this.handleChange}/>
-						      <label>I agree to the Terms and Conditions</label>
-						    </div>
-						  </div>
-						  <button className="ui button" type="submit">Submit</button>
-						</form>
-						<br />
-					</center>						
-				</div>
-				<img className="image"
-					alt="" 
-					src={sharedgoals} 
-					width="300px" height="300px" 
-				/>		
-			</section>
-			</center>
-		</div>
+				<section className={styles.donorParent}>
+					<img className={styles.image}
+							alt="" 
+							src={medicalcare} 
+							width="300px" height="300px" 		
+					/>
+					<img 
+						src={donate} 
+						alt="heart" 
+						width="200px" height="200px"
+					/>
+					<img className={styles.image}
+							alt="" 
+							src={sharedgoals} 
+							width="300px" height="300px" 
+					/>
+				</section>
+			</center>	
+				<div className={styles.container}>  
+					<form className={styles.contact}>
+						<fieldset>
+							<input name="name" placeholder="Your name" type="text" required autofocus/>
+						</fieldset>
+						<fieldset>
+							<input name="email" placeholder="Your Email Address" type="email" required/>
+						</fieldset>
+						<fieldset>
+							<input name="location" placeholder="Your location" type="text" required/>
+						</fieldset>
+						<fieldset>
+							<textarea placeholder="Write your story here"></textarea>
+						</fieldset>
+						<input 
+							type="checkbox"   	 
+							name="isChecked" 
+							onChange = {this.handleChange} 
+							checked={this.state.isChecked} 
+						/>
+						<label>I agree to the Terms and Conditions</label>
+						<fieldset>
+							<button name="submit" type="submit" id="contact-submit" onClick={() => console.log(this.state)}>Submit</button>
+						</fieldset>
+					</form>
+				</div>			
+			</div>
 		
 	)
 	}

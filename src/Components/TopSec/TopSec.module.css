@@ -1,0 +1,9 @@
+
+.image{
+    background: url(../assets/covid.jpg);
+    width: 100%;
+    height: 100%;
+    background-attachment: fixed;
+	background-position: center;
+	
+}

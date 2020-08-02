@@ -1,0 +1,10 @@
+.nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.NavLink:hover{
+    background-color: #00ffff;
+    color: black;
+    border-radius: 10%;
+}
