@@ -1,32 +1,37 @@
 {
   "files": {
-    "main.css": "/covid-donor/static/css/main.4f6cd098.chunk.css",
-    "main.js": "/covid-donor/static/js/main.ec1e5861.chunk.js",
-    "main.js.map": "/covid-donor/static/js/main.ec1e5861.chunk.js.map",
+    "main.css": "/covid-donor/static/css/main.a6213609.chunk.css",
+    "main.js": "/covid-donor/static/js/main.f23bd9c9.chunk.js",
+    "main.js.map": "/covid-donor/static/js/main.f23bd9c9.chunk.js.map",
     "runtime-main.js": "/covid-donor/static/js/runtime-main.8b5e08c5.js",
     "runtime-main.js.map": "/covid-donor/static/js/runtime-main.8b5e08c5.js.map",
-    "static/css/2.9bc0b5ab.chunk.css": "/covid-donor/static/css/2.9bc0b5ab.chunk.css",
-    "static/js/2.ca88129a.chunk.js": "/covid-donor/static/js/2.ca88129a.chunk.js",
-    "static/js/2.ca88129a.chunk.js.map": "/covid-donor/static/js/2.ca88129a.chunk.js.map",
+    "static/css/2.b087d4cc.chunk.css": "/covid-donor/static/css/2.b087d4cc.chunk.css",
+    "static/js/2.15a7915f.chunk.js": "/covid-donor/static/js/2.15a7915f.chunk.js",
+    "static/js/2.15a7915f.chunk.js.map": "/covid-donor/static/js/2.15a7915f.chunk.js.map",
     "index.html": "/covid-donor/index.html",
-    "precache-manifest.01c535c07211301dafc7caf983294210.js": "/covid-donor/precache-manifest.01c535c07211301dafc7caf983294210.js",
+    "precache-manifest.677c491379ec82e162b676075e4de595.js": "/covid-donor/precache-manifest.677c491379ec82e162b676075e4de595.js",
     "service-worker.js": "/covid-donor/service-worker.js",
-    "static/css/2.9bc0b5ab.chunk.css.map": "/covid-donor/static/css/2.9bc0b5ab.chunk.css.map",
-    "static/css/main.4f6cd098.chunk.css.map": "/covid-donor/static/css/main.4f6cd098.chunk.css.map",
-    "static/js/2.ca88129a.chunk.js.LICENSE.txt": "/covid-donor/static/js/2.ca88129a.chunk.js.LICENSE.txt",
+    "static/css/2.b087d4cc.chunk.css.map": "/covid-donor/static/css/2.b087d4cc.chunk.css.map",
+    "static/css/main.a6213609.chunk.css.map": "/covid-donor/static/css/main.a6213609.chunk.css.map",
+    "static/js/2.15a7915f.chunk.js.LICENSE.txt": "/covid-donor/static/js/2.15a7915f.chunk.js.LICENSE.txt",
+    "static/media/add.svg": "/covid-donor/static/media/add.603e406b.svg",
+    "static/media/mdb.css": "/covid-donor/static/media/arrow_right.8ef6a08c.svg",
     "static/media/semantic.min.css": "/covid-donor/static/media/outline-icons.ef60a4f6.woff",
     "static/media/calling.svg": "/covid-donor/static/media/calling.ae2ae124.svg",
     "static/media/connect.svg": "/covid-donor/static/media/connect.83aaa479.svg",
+    "static/media/covid.jpg": "/covid-donor/static/media/covid.c724d1af.jpg",
+    "static/media/covid19.JPG": "/covid-donor/static/media/covid19.1a7b312f.JPG",
     "static/media/donate.png": "/covid-donor/static/media/donate.615096e9.png",
     "static/media/medicalcare.png": "/covid-donor/static/media/medicalcare.f5cb6925.png",
+    "static/media/mobileApp.svg": "/covid-donor/static/media/mobileApp.1eebeb7b.svg",
     "static/media/sharedgoals.png": "/covid-donor/static/media/sharedgoals.3f3644b9.png",
-    "static/media/undraw.png": "/covid-donor/static/media/undraw.f5399086.png"
+    "static/media/Home.module.css": "/covid-donor/static/media/stats.35b886e0.JPG"
   },
   "entrypoints": [
     "static/js/runtime-main.8b5e08c5.js",
-    "static/css/2.9bc0b5ab.chunk.css",
-    "static/js/2.ca88129a.chunk.js",
-    "static/css/main.4f6cd098.chunk.css",
-    "static/js/main.ec1e5861.chunk.js"
+    "static/css/2.b087d4cc.chunk.css",
+    "static/js/2.15a7915f.chunk.js",
+    "static/css/main.a6213609.chunk.css",
+    "static/js/main.f23bd9c9.chunk.js"
   ]
 }
